@@ -1,0 +1,4 @@
+<h1>Counter: {{ counter }}</h1>
+<hr>
+<app-button-add [counter]="counter" (onAdd)="handleAdd($event)"></app-button-add>
+<app-button-dis [counter]="counter" (onDis)="handleDis($event)"></app-button-dis>
