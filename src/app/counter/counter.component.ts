@@ -8,11 +8,7 @@ import { Component } from '@angular/core';
 export class CounterComponent {
   counter: number = 0;
 
-  handleAdd(value: number) {
-    this.counter = value;
-  }
-  
-  handleDis(value: number) {
+  handleCount(value: number) {
     this.counter = value;
   }
 }

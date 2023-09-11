@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'FiraCode Nerd Font', sans-serif;
     text-align: center;
+    font-size: 2rem;
 }
 
 button {
     border: none;
+    border-radius: 2rem;
     color: snow;
     font-size: 2rem;
-    width: 10rem;
-    margin: 12px 5px;
+    width: 12rem;
+    height: 3rem;
+    margin: 2rem 1rem;
 }
 
 button:hover {

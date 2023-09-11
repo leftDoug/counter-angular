@@ -1,9 +1,10 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 
 import { CounterComponent } from "./counter.component"
+import { ButtonAddComponent } from './button-add/button-add.component';
 
-describe('CounterComponent', () => {
-  /*let component: CounterComponent;
+describe('CounterComponent Unit', () => {
+  let component: CounterComponent;
   let fixture: ComponentFixture<CounterComponent>;
 
   beforeEach(() => {
@@ -13,12 +14,21 @@ describe('CounterComponent', () => {
     fixture = TestBed.createComponent(CounterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });*/
+  });
   
   it('should create', () => {
     // expect(component).toBeTruthy();
+    fixture = TestBed.createComponent(CounterComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+  
+  it('should create the text Counter: 0', () => {
     const fixture = TestBed.createComponent(CounterComponent);
-    expect(fixture.componentInstance).toBeTruthy();
+    fixture.detectChanges();
+    const compiled: HTMLElement = fixture.nativeElement;
+    // const app = fixture.componentInstance;
+    expect(compiled.querySelector("h1")?.textContent).toEqual("Counter: 0");
   });
 
   it('initial value of counter is 0', () => {
@@ -26,3 +36,20 @@ describe('CounterComponent', () => {
     expect(counter.counter).toBe(0);
   });
 });
+
+describe('CounterComponent Integration', () => {
+  let component: CounterComponent;
+  let fixture: ComponentFixture<CounterComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [CounterComponent, ButtonAddComponent]
+    })
+  });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CounterComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+})
